@@ -23,14 +23,24 @@ For orders:  [('apples', 3.0)] best shop is shop2
 from __future__ import print_function
 import shop
 
-
+#orderList = [('apples', 1.0), ('oranges', 3.0)]
 def shopSmart(orderList, fruitShops):
     """
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
     "*** YOUR CODE HERE ***"
-    return None
+    least_name = None
+    least_amount = 80
+    for shop in fruitShops:
+        print(shop.getPriceOfOrder(orderList))
+        print(shop.getName())
+        if shop.getPriceOfOrder(orderList) < least_amount:
+            least_name = shop
+            least_amount = shop.getPriceOfOrder(orderList)
+    
+
+    return least_name
 
 
 if __name__ == '__main__':
